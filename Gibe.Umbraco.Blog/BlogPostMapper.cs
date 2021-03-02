@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Examine;
-using Gibe.DittoServices.ModelConverters;
 using Gibe.Umbraco.Blog.Models;
 using Gibe.UmbracoWrappers;
 using Umbraco.Core.Models;
@@ -10,12 +9,10 @@ namespace Gibe.Umbraco.Blog
 {
 	public class BlogPostMapper<T> : IBlogPostMapper<T> where T : class, IBlogPostModel
 	{
-		private readonly IModelConverter _modelConverter;
 		private readonly IUmbracoWrapper _umbracoWrapper;
 
-		public BlogPostMapper(IModelConverter modelConverter, IUmbracoWrapper umbracoWrapper)
+		public BlogPostMapper(IUmbracoWrapper umbracoWrapper)
 		{
-			_modelConverter = modelConverter;
 			_umbracoWrapper = umbracoWrapper;
 		}
 
@@ -26,7 +23,7 @@ namespace Gibe.Umbraco.Blog
 			ToBlogPost(_umbracoWrapper.TypedContent(searchResult.Id));
 		
 		private T ToBlogPost(IPublishedContent content)
-			=> _modelConverter.ToModel<T>(content);
+			=> Activator.Activate<T>(content);
 		
 		private IEnumerable<T> ToBlogPosts(IEnumerable<IPublishedContent> content)
 			=> content.Select(ToBlogPost);

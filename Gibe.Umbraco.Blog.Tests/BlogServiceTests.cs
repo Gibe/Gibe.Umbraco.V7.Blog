@@ -2,16 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using Examine;
-using Gibe.DittoServices.ModelConverters;
 using Gibe.Pager.Interfaces;
 using Gibe.Umbraco.Blog.Filters;
 using Gibe.Umbraco.Blog.Models;
 using Gibe.UmbracoWrappers;
 using NUnit.Framework;
 using Moq;
-using Our.Umbraco.Ditto;
 using Umbraco.Core.Models;
-using Umbraco.Core.Models.Membership;
 
 namespace Gibe.Umbraco.Blog.Tests
 {
@@ -147,39 +144,9 @@ namespace Gibe.Umbraco.Blog.Tests
 	public class BlogModel : IBlogPostModel
 	{
 		public int Id { get; set; }
-		public string Url { get; set; }
-		public DateTime PostDate { get; set; }
+		public string Url { get; }
+		public DateTime PostDate { get; }
 		public IEnumerable<string> Tags { get; set; }
 		public bool HasTags { get; set; }
-	}
-
-	public class FakeModelConverter : IModelConverter
-	{
-		private readonly IEnumerable<BlogModel> _blogPosts;
-
-		public FakeModelConverter(IEnumerable<BlogModel> blogPosts)
-		{
-			_blogPosts = blogPosts;
-		}
-
-		public T ToModel<T>(IPublishedContent content, IEnumerable<DittoProcessorContext> contexts) where T : class
-		{
-			return _blogPosts.First(p => p.Id == content.Id) as T;
-		}
-
-		public object ToModel(Type type, IPublishedContent content, IEnumerable<DittoProcessorContext> contexts)
-		{
-			return ToModel<BlogModel>(content, contexts);
-		}
-
-		public IEnumerable<T> ToModel<T>(IEnumerable<IPublishedContent> nodes, IEnumerable<DittoProcessorContext> contexts) where T : class
-		{
-			return _blogPosts.Where(p => nodes.Select(n => n.Id).Contains(p.Id)).Select(p => p as T);
-		}
-
-		public IEnumerable<object> ToModel(Type type, IEnumerable<IPublishedContent> content, IEnumerable<DittoProcessorContext> contexts)
-		{
-			return ToModel<BlogModel>(content, contexts);
-		}
 	}
 }
