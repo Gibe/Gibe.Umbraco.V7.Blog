@@ -1,0 +1,23 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<Umbraco.TestSite.Models.BlogViewModel>
+@{ Layout = "Master.cshtml"; }
+@Html.Partial("~/Views/Partials/SectionHeader.cshtml")
+<section class="section">
+	<div class="container">
+		<div class="blogposts">
+			@foreach (var post in Model.Content.BlogPosts.CurrentPageItems)
+			{
+<a href="@post.Url()" class="blogpost">
+	<div class="blogpost-meta">
+		<small class="blogpost-date">@post.PostDate.ToString("dd/MM/yyyy")</small>
+		<small class="blogpost-cat">
+
+		</small>
+	</div>
+	<h3 class="blogpost-title">@post.PageTitle</h3>
+	<div class="blogpost-excerpt">@post.Excerpt</div>
+</a>			}
+		</div>
+
+	</div>
+
+</section>

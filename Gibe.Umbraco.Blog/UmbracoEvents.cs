@@ -34,8 +34,7 @@ namespace Gibe.Umbraco.Blog
 			if (applicationContext.IsConfigured && applicationContext.DatabaseContext.IsDatabaseConfigured)
 			{
 				ContentService.Saving += ContentService_Saving;
-				// TODO : Nicer than this
-				new NewsIndex().GetIndexer().DocumentWriting += IndexerOnDocumentWriting;
+				new BlogSearchIndex().GetIndexer().DocumentWriting += IndexerOnDocumentWriting;
 			}
 		}
 
@@ -49,7 +48,7 @@ namespace Gibe.Umbraco.Blog
 				document.Add(new Field("postDateMonth", postDate.Month.ToString("00"), Field.Store.YES, Field.Index.NOT_ANALYZED));
 				document.Add(new Field("postDateDay", postDate.Day.ToString("00"), Field.Store.YES, Field.Index.NOT_ANALYZED));
 
-				var tags = document.Get("settingsNewsTags");
+				var tags = document.Get("postTags");
 				if (tags != null)
 				{
 					foreach (var tag in tags.Split(','))

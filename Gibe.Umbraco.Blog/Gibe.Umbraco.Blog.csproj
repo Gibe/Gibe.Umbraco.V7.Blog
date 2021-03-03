@@ -362,7 +362,7 @@
     <Compile Include="Utilities\ExactPhraseExamineValue.cs" />
     <Compile Include="Utilities\Import.cs" />
     <Compile Include="Wrappers\ISearchIndex.cs" />
-    <Compile Include="Wrappers\NewsIndex.cs" />
+    <Compile Include="Wrappers\BlogSearchIndex.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

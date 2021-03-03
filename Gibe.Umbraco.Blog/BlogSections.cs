@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Examine;
-using Gibe.Umbraco.Blog.Models;
 using Gibe.Umbraco.Blog.Settings;
 using Gibe.Umbraco.Blog.Wrappers;
 using Gibe.UmbracoWrappers;

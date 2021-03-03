@@ -1,13 +1,10 @@
-﻿using System;
-using Examine;
-using Examine.LuceneEngine;
-using Examine.Providers;
+﻿using Examine;
 using Examine.SearchCriteria;
 using UmbracoExamine;
 
 namespace Gibe.Umbraco.Blog.Wrappers
 {
-	public class NewsIndex : ISearchIndex
+	public class BlogSearchIndex : ISearchIndex
 	{
 		public UmbracoContentIndexer GetIndexer()
 		{

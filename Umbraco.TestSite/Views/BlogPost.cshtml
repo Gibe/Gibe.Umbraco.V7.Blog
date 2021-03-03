@@ -1,0 +1,31 @@
+﻿@using System.Activities.Statements
+@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<Umbraco.TestSite.Models.BlogPostModel>
+@{
+    Layout = "Master.cshtml";
+}
+@Html.Partial("~/Views/Partials/SectionHeader.cshtml")
+
+<section class="section">
+    <div class="container">
+			<article>
+				<div class="blogpost-meta">
+					<small class="blogpost-date">@Model.Content.PostDate.ToString("dd/MM/yyyy")</small>
+					<span class="blogpost-cat">
+						@Html.Partial("~/Views/Partials/CategoryLinks.cshtml", Model.Content.Categories)
+					</span>
+				</div>
+				<h3>@Model.Content.Excerpt</h3>
+				@Html.GetGridHtml(Model.Content, "bodyText", "bootstrap3-fluid")
+				<!-- todo: implement discus comments -->
+				
+				@if(Model.Content.Previous != null) 
+				{
+				<a href="@Model.Content.Previous.Url()">Previous post</a>
+				}
+				@if (Model.Content.Next != null)
+				{
+					<a href="@Model.Content.Next.Url()">Next post</a>
+				}
+			</article>
+    </div>
+</section>

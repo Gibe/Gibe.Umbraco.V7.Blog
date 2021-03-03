@@ -2,11 +2,11 @@
 
 Install using Nuget
 
-``` install-package Gibe.Umbraco.Blog ```
+``` install-package Gibe.Umbraco.V7.Blog ```
 
 Ninject module is available
 
-``` Gibe.Umbraco.Blog.Ninject.GibeUmbracoBlogModule ```
+``` Gibe.Umbraco.V7.Blog.Ninject.GibeUmbracoBlogModule ```
 
 ## Setting up the Examine indexes
 
@@ -14,12 +14,14 @@ Add this to ExamineSettings.config
 
 In ExamineIndexProviders > Providers
 ```xml
-<add name="BlogIndexer" type="UmbracoExamine.UmbracoContentIndexer, UmbracoExamine"/>
+<add name="BlogIndexer" type="UmbracoExamine.UmbracoContentIndexer, UmbracoExamine"
+					 analyzer="Lucene.Net.Analysis.WhitespaceAnalyzer, Lucene.Net" />
 ```
 
 In ExamineSearchProviders > Providers
 ```xml
-<add name="BlogSearcher" type="UmbracoExamine.UmbracoExamineSearcher, UmbracoExamine" />
+<add name="BlogSearcher" type="UmbracoExamine.UmbracoExamineSearcher, UmbracoExamine"
+					 analyzer="Lucene.Net.Analysis.WhitespaceAnalyzer, Lucene.Net" />
 ```
 
 Add this to ExamineIndex.config
@@ -50,8 +52,7 @@ Add this to ExamineIndex.config
 
 Add a new DocType with an alias blogPost with the following properties along with any custom properties:
 
-settingsNewsTags - Tag Picker
-
+postTags - Tag Picker
 postDate - Date Picker
 
 # Usage

@@ -168,6 +168,8 @@ App_Data/
 imageCache/
 TEMP/
 uSync.Archive/
+umbraco/
+umbraco_client/
 
 # Packages
 packages/

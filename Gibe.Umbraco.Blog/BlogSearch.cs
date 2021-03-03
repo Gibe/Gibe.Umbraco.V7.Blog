@@ -1,12 +1,10 @@
 ﻿using System.Collections.Generic;
 using Examine;
-using Examine.LuceneEngine.SearchCriteria;
 using Examine.SearchCriteria;
 using Gibe.Umbraco.Blog.Filters;
 using Gibe.Umbraco.Blog.Settings;
 using Gibe.Umbraco.Blog.Sort;
 using Gibe.Umbraco.Blog.Wrappers;
-using Lucene.Net.Search;
 
 namespace Gibe.Umbraco.Blog
 {
