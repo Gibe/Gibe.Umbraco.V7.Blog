@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Gibe.Umbraco.Blog</RootNamespace>
-    <AssemblyName>Gibe.Umbraco.Blog</AssemblyName>
+    <AssemblyName>Gibe.Umbraco.V7.Blog</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
@@ -366,7 +366,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="Gibe.Umbraco.Blog.nuspec">
+    <None Include="Gibe.Umbraco.V7.Blog.nuspec">
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />

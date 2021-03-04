@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
 	<metadata>
-		<id>Gibe.Umbraco.Blog</id>
+		<id>Gibe.Umbraco.V7.Blog</id>
 		<version>$version$</version>
 		<authors>Gibe Digital Ltd</authors>
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -16,6 +16,6 @@
 		</dependencies>
 	</metadata>
 	<files>
-		<file src="bin\Release\Gibe.Umbraco.Blog.dll" target="lib" />
+		<file src="bin\Release\Gibe.Umbraco.V7.Blog.dll" target="lib" />
 	</files>
 </package>
