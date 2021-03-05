@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31005.135
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gibe.Umbraco.V7.Blog", "Gibe.Umbraco.Blog\Gibe.Umbraco.V7.Blog.csproj", "{5E7B7B56-7CA0-4E67-B6F4-E4257EB263D5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gibe.Umbraco.V7.Blog", "Gibe.Umbraco.V7.Blog\Gibe.Umbraco.V7.Blog.csproj", "{5E7B7B56-7CA0-4E67-B6F4-E4257EB263D5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gibe.Umbraco.V7.Blog.Tests", "Gibe.Umbraco.Blog.Tests\Gibe.Umbraco.V7.Blog.Tests.csproj", "{8CE36655-ED65-444C-9101-3A986C317C3F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gibe.Umbraco.V7.Blog.Tests", "Gibe.Umbraco.V7.Blog.Tests\Gibe.Umbraco.V7.Blog.Tests.csproj", "{8CE36655-ED65-444C-9101-3A986C317C3F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D8F40142-8850-4A21-B19D-3AFF1382533D}"
 	ProjectSection(SolutionItems) = preProject

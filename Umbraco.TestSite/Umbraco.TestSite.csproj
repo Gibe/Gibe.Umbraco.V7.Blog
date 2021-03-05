@@ -371,7 +371,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Gibe.Umbraco.Blog\Gibe.Umbraco.V7.Blog.csproj">
+    <ProjectReference Include="..\Gibe.Umbraco.V7.Blog\Gibe.Umbraco.V7.Blog.csproj">
       <Project>{5e7b7b56-7ca0-4e67-b6f4-e4257eb263d5}</Project>
       <Name>Gibe.Umbraco.V7.Blog</Name>
     </ProjectReference>
