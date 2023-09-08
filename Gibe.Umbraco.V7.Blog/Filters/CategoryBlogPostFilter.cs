@@ -7,8 +7,6 @@ namespace Gibe.Umbraco.Blog.Filters
 	{
 		public string CategoryName { get; set; }
 
-		public CategoryBlogPostFilter() { }
-
 		public CategoryBlogPostFilter(string categoryName)
 		{
 			CategoryName = categoryName;
