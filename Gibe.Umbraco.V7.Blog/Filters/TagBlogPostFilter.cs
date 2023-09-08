@@ -1,21 +1,22 @@
 ﻿using Examine.SearchCriteria;
-using Gibe.Umbraco.Blog.Models;
 using Gibe.Umbraco.Blog.Utilities;
 
 namespace Gibe.Umbraco.Blog.Filters
 {
 	public class TagBlogPostFilter : IBlogPostFilter
 	{
-		private readonly string _tag;
+		public string Tag { get; set; }
+
+		public TagBlogPostFilter() { }
 
 		public TagBlogPostFilter(string tag)
 		{
-			_tag = tag;
+			Tag = tag;
 		}
 		
 		public IBooleanOperation GetCriteria(IQuery query)
 		{
-			return query.Field("tag", new ExactPhraseExamineValue(_tag.ToLower()));
+			return query.Field("tag", new ExactPhraseExamineValue(Tag.ToLower()));
 		}
 	}
 }

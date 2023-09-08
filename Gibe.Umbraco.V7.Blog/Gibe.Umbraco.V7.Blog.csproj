@@ -328,6 +328,8 @@
     <Compile Include="BlogSections.cs" />
     <Compile Include="BlogService.cs" />
     <Compile Include="BlogTags.cs" />
+    <Compile Include="Filters\AuthorBlogPostFilter.cs" />
+    <Compile Include="Filters\CategoryBlogPostFilter.cs" />
     <Compile Include="Filters\DateBlogPostFilter.cs" />
     <Compile Include="Filters\IBlogPostFilter.cs" />
     <Compile Include="Filters\SearchTermBlogPostFilter.cs" />

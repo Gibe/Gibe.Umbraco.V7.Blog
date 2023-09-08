@@ -4,16 +4,18 @@ namespace Gibe.Umbraco.Blog.Filters
 {
 	public class SectionBlogPostFilter : IBlogPostFilter
 	{
-		private readonly int _sectionNodeId;
+		public int SectionNodeId { get; set; }
+
+		public SectionBlogPostFilter() { }
 
 		public SectionBlogPostFilter(int sectionNodeId)
 		{
-			_sectionNodeId = sectionNodeId;
+			SectionNodeId = sectionNodeId;
 		}
 
 		public IBooleanOperation GetCriteria(IQuery query)
 		{
-			return query.Field("path", _sectionNodeId.ToString());
+			return query.Field("path", SectionNodeId.ToString());
 		}
 	}
 }
