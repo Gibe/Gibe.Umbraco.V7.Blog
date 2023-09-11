@@ -1,24 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Examine.SearchCriteria;
+﻿using Examine.SearchCriteria;
 
 namespace Gibe.Umbraco.Blog.Sort
 {
 	public class DateSort : ISort
 	{
-		private readonly bool _descending;
+		public bool Descending { get; }
 
 		public DateSort(bool descending = true)
 		{
-			_descending = descending;
+			Descending = descending;
 		}
 
 		public IBooleanOperation GetCriteria(IBooleanOperation query)
 		{
-			if (_descending)
+			if (Descending)
 			{
 				return query.And().OrderByDescending("postDate");
 			}

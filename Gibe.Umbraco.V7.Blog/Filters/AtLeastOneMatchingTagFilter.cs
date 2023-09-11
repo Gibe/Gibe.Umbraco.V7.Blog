@@ -6,18 +6,16 @@ namespace Gibe.Umbraco.Blog.Filters
 {
 	public class AtLeastOneMatchingTagFilter : IBlogPostFilter
 	{
-		private readonly IEnumerable<string> _tags;
+		public IEnumerable<string> Tags { get; }
 
 		public AtLeastOneMatchingTagFilter(IEnumerable<string> tags)
 		{
-			_tags = tags;
+			Tags = tags;
 		}
 		
 		public IBooleanOperation GetCriteria(IQuery query)
 		{
-			return query.GroupedOr(new []{"tag"}, _tags.ToArray());
+			return query.GroupedOr(new []{"tag"}, Tags.ToArray());
 		}
-
-		public IEnumerable<string> Tags => _tags;
 	}
 }
